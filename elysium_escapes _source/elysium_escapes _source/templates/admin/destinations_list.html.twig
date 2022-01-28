@@ -1,0 +1,58 @@
+{% extends "admin/master.html.twig" %}
+
+{% block title %}User List
+{% endblock %}
+
+{% block head %}
+	<style>
+		.table {
+			width: 100%;
+			height:auto;
+		}
+
+		.table,
+		th,
+		td {
+			border: 1px solid black;
+			padding: 15px;
+			text-align: center;
+		}
+		.center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		caption {
+			caption-side: top;
+			text-align: left;
+		}
+
+	</style>
+{% endblock %}
+
+{% block content %}
+	<br/><br/>
+	<table class="center mb-5 table">
+		<caption><a href="/admin/destinations/add">Add a New Destination</a></caption>
+		<tr>
+			<th>ID</th>
+			<th>Destination Name</th>
+			<th>Destination Description</th>
+			<th>Destination Picture</th>
+            <th>Actions</th>
+		</tr>
+		{% for d in destinationsList %}
+			<tr>
+				<td>{{d.id}}</td>
+				<td>{{d.destination_name}}</td>
+				<td>{% autoescape %}{{d.destination_description|raw}}{% endautoescape %}</td>
+				<td><img src ="/../{{d.destination_imagepath}}" width="250"/></td>
+				<td>
+					<a href="/admin/destinations/edit/{{d.id}}">Edit</a>&nbsp;
+					<a href="/admin/destinations/delete/{{d.id}}">Delete</a>
+					<a href="/admin/destinations/addimage/{{d.id}}">Add Photo</a>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

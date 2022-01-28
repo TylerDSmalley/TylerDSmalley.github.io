@@ -1,0 +1,51 @@
+{% extends "admin/master.html.twig" %}
+
+{% block title %}Add Destination Photo
+{% endblock %}
+
+{% block head %}
+	<link rel="stylesheet" href="/styles/addDestinations.css">
+	<script src="scripts/nav.js"></script>
+	{{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+	{% if errorList %}
+		<ul>
+			{% for error in errorList %}
+				<li>{{ error }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	<section class="section p-5">
+		<div class="container">
+
+			<div class="row g-2 mt-5">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h3 class="h3 card-title" id="exampleModalNavLabel">Add Destination Photos</h3>
+						</div>
+						<div class="modal-body text-center">
+							<h5>Destination ID:<strong>{{ destinationId }}</strong></h5>
+							<form class="form" method="post" enctype="multipart/form-data">
+									
+									<input type="file" name="photo" class="form-control">
+									<div class="redText">{{errors.photo}}</div>
+
+									<div class="submitButtonBox">
+										<input class="submitButton" type="submit" name="submit" value="Submit">
+									</div>
+							</form>
+
+						</div>
+						<div class="modal-footer"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock content %}

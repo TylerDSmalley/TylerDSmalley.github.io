@@ -1,0 +1,146 @@
+/* CSS Document for the booking confirmation page */
+
+
+/* Developed by:  Tyler Smalley */
+
+.body,
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14pt;
+    text-shadow: #ee9b57 3px 0 6px;
+    background-image: linear-gradient(to right, #f1dbc7, #f3ceb6);
+    color: #26a1b1;
+}
+
+#confirmed_container {
+    border-top: thin solid #AB8A72;
+    border-bottom: thin solid #AB8A72;
+    background-image: linear-gradient(to right, #f1dbc7, #f3ceb6);
+    box-shadow: 0 4px 2px -2px rgb(37, 36, 36);
+    position: relative;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0 0 5% 0;
+    opacity: .97;
+}
+
+#h2_confirmed {
+    font-family: 'Caveat', cursive;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 24pt;
+    font-weight: 900;
+    text-shadow: 1px 1px white, #07616b -1px -1px;
+    text-align: center;
+    color: #fff;
+    margin: 5% 25% 1% 25%;
+}
+
+p {
+    text-align: center;
+}
+
+@media only screen and (max-width: 668px) {
+    .flex {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+#tableWrapper {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: inherit;
+    margin: 0;
+    align-self: auto;
+    border: 0;
+}
+
+legend {
+    color: #07616b;
+}
+
+.flexTable {
+    flex: content;
+}
+
+caption {
+    font-size: 20pt;
+    text-decoration: underline;
+    padding-bottom: 1%;
+}
+
+td {
+    text-align: center;
+}
+
+.footer {
+    border-top: thick solid #AB8A72;
+    z-index: 5;
+    opacity: .95;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right, #f1dbc7, #f3ceb6);
+}
+
+.address_container {
+    flex: auto;
+    list-style: none;
+    margin: 1%;
+    padding: 1%;
+}
+
+.hours_container {
+    flex: auto;
+    list-style: none;
+    margin: 1%;
+    padding: 1%;
+}
+
+.logo_wrapper {
+    flex: auto;
+    margin: 1%;
+    padding: 1%;
+}
+
+.parallax-1 {
+    position: relative;
+    opacity: 0.9;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-1 {
+    background-image: url("../images/sunset.jpg");
+    min-height: 60%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Turn off parallax scrolling for tablets and phones */
+
+@media only screen and (max-width: 1024px) {
+    .parallax-1 {
+        background-attachment: scroll;
+    }
+}

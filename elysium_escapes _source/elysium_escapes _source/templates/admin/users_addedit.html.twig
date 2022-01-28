@@ -1,0 +1,76 @@
+{% extends "admin/master.html.twig" %}
+
+{% block title %}
+{% if op == 'add' %}Add{% else %}Edit{% endif %} User
+{% endblock %}
+
+{% block head %}
+	<link rel="stylesheet" href="/styles/addDestinations.css">
+	<script src="scripts/nav.js"></script>
+	{{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+	<section class="section p-5">
+		<div class="container">
+		{% if errorList %}
+		<ul>
+			{% for error in errorList %}
+				<li>{{ error }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+			<form class="form" method="POST">
+				<input class="title" type="hidden" name="op" value="{{ op }}"/>
+				<h3>{% if op == 'add' %}Add{% else %}Edit{% endif %} User</h3>
+				<div class="formContainer">
+					User First Name:
+					<input class="title" type="text" name="firstName" value="{{ use.first_name }}"/><br/>
+                    User Last Name:
+					<input class="title" type="text" name="lastName" value="{{ use.last_name }}"/><br/>
+					User Email:
+					<input class="title" type="text" name="email" value="{{ use.email }}"/><br>
+					User Phone:
+					<input class="title" type="tel" name="phone" value="{{use.phone_number}}" placeholder="555-555-5555"/><br/>
+                    User Type:<br/>
+                    <select name="type" id="type">
+					 {% if use.account_type == "customer" or op == 'add' or errorList %}
+                        <option selected>customer</option>
+                        <option>manager</option>
+                        <option>admin</option>
+					{% endif %}	
+					 {% if use.account_type == "manager"%}
+                        <option>customer</option>
+                        <option selected>manager</option>
+                        <option>admin</option>
+					{% endif %}	
+					 {% if use.account_type == "admin"%}
+                        <option>customer</option>
+                        <option>manager</option>
+                        <option selected>admin</option>
+					{% endif %}	
+					</select>
+                    <br/><br/>
+					{% if op == 'edit' %}
+					<p><strong>Only provide password if you are changing it for this user</strong></p>
+					{% endif %}
+					{% if op == 'add' %}
+					<p>Password must be at least 8 characters long and contain at least one uppercase letter, one lower case letter, and one number</p>
+					{% endif %}
+					Password:
+					<input class="title" type="password" name="password1"/><br/>
+					Password (Confirmed):
+					<input class="title" type="password" name="password2"/>
+					<br/><br/>
+					<div class="submitButtonBox">
+						<input class="submitButton" type="submit" value="Submit">
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</section>
+{% endblock content %}

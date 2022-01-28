@@ -1,0 +1,101 @@
+/* CSS Document for the Destinations page */
+
+
+/* Developed by:  Tyler Smalley */
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#calendar_container {
+    border-top: thin solid #AB8A72;
+    border-bottom: thin solid #AB8A72;
+    box-shadow: 0 4px 2px -2px rgb(37, 36, 36);
+    position: relative;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0 0 5% 0;
+    background-image: linear-gradient(to right, #f1dbc7, #f3ceb6);
+    opacity: .97;
+}
+
+.card {
+    min-width: fit-content;
+    height: auto;
+}
+
+.imgButton {
+    border: none;
+    border-radius: 30px;
+    max-width: 500px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    color: #000;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.imgButton:hover {
+    background-color: #3ddf9e;
+    box-shadow: 0px 15px 20px rgba(47, 211, 145, 0.4);
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.destinationImage {
+    border-radius: 30px;
+}
+
+.submitButton {
+    flex: auto;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 16pt;
+    letter-spacing: 2px;
+    margin: 15px;
+    padding: 5px;
+    background-color: #f1dbc7;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    color: #000;
+    font-size: 11px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background-color: #3ddf9e;
+    box-shadow: 0px 15px 20px rgba(47, 211, 145, 0.4);
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.parallax-1 {
+    position: relative;
+    opacity: 0.9;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-1 {
+    background-image: url("../images/phuket.jpg");
+    min-height: 45%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Turn off parallax scrolling for tablets and phones */
+
+@media only screen and (max-width: 1024px) {
+    .bgimg-1,
+    .bgimg-2,
+    .bgimg-3 {
+        background-attachment: scroll;
+    }
+}

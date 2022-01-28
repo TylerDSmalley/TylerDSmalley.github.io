@@ -1,0 +1,57 @@
+{% extends "admin/master.html.twig" %}
+
+{% block title %}Hotels List
+{% endblock %}
+
+{% block head %}
+	<style>
+		.table,
+		th,
+		td {
+			border: 1px solid black;
+			padding: 15px;
+			text-align: center;
+		}
+		.center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		caption {
+			caption-side: top;
+			text-align: left;
+		}
+	</style>
+{% endblock %}
+
+{% block content %}
+	<br/><br/>
+	<table class="center">
+		<caption>Hotel Bookings Details</caption>
+		<tr>
+			<th>ID</th>
+            <th>Destination ID</th>
+			<th>Hotel Name</th>
+			<th>Hotel City</th>
+			<th>Hotel Address</th>
+            <th>Hotel Currency</th>
+			<th>Hotel Currency Price</th>
+			<th>Canadian Currency Price</th>
+            <th>Confirmation Number</th>
+            
+		</tr>
+		{% for h in hotelsList %}
+			<tr>
+				<td>{{h.id}}</td>
+				<td>{{h.destination_id}}</td>
+                <td>{{h.hotel_name}}</td>
+                <td>{{h.hotel_city}}</td>
+				<td>{{h.hotel_address}}</td>
+				<td>{{h.hotel_currency}}</td>
+				<td>{{h.price_hotel_currency}}</td>
+                <td>{{h.price_cad}}</td>
+                <td>{{h.confirmation}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

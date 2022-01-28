@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+{% block title %}Booking
+{% endblock %}
+{% block head %}
+	<link rel="stylesheet" href="styles/book.css"/>
+	<link rel="stylesheet" href="styles/checkout.css"/>
+	<script src="scripts/booking.js" defer></script>
+	<script src="https://js.stripe.com/v3/"></script>
+	<script src="scripts/checkout.js" defer></script>
+	{{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+	<div class="parallax-1">
+		<div class="caption">
+			<span class="border">Are You Ready To..</span>
+		</div>
+	</div>
+
+	<section class="section p-5">
+
+		<div class="container d-flex justify-content-center  mt-5 mb-5 rounded">
+			<form id="payment-form" class="bg-light">
+				<input type="hidden" id="price" value="{{cad_price}}"/>
+				<input type="hidden" id="booking_id" value="{{booking_id}}"/>
+				<p>
+					Hotel Name:
+					{{ hotel.hotel_name }}<br>
+					City:
+					{{ hotel.city }}<br>
+					Price ({{hotel.currency_code}}):
+					{{ hotel.price_breakdown.all_inclusive_price }}<br>
+					Price (CAD):
+					{{ cad_price }}<br>
+				</p>
+				<div
+					id="payment-element"><!--Stripe.js injects the Payment Element-->
+				</div>
+				<button id="submit">
+					<div class="spinner hidden" id="spinner"></div>
+					<span id="button-text">Pay now</span>
+				</button>
+				<div id="payment-message" class="hidden"></div>
+			</form>
+		</div>
+	</section>
+
+	<div class="parallax-1">
+		<div class="caption">
+			<span class="border">...Escape</span>
+		</div>
+	</div>
+{% endblock %}

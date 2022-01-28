@@ -1,0 +1,33 @@
+{% extends "admin/master.html.twig" %}
+
+{% block title %}Delete Destination
+{% endblock %}
+
+{% block head %}
+	<link rel="stylesheet" href="/styles/addDestinations.css">
+	<script src="scripts/nav.js"></script>
+	{{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+	<section class="section p-5">
+		<div class="container">
+				<br/><br/><br/><br/>
+				<h3>Delete Destination</h3>
+					Destination ID: &nbsp;{{destination.id}}<br/>
+					Destination Name: &nbsp;{{destination.destination_name}}<br/>
+					Destination Description: &nbsp;{{ destination.destination_description }}<br/>
+					Destination Image:&nbsp;<img src="/../{{ destination.destination_imagepath }}" width="250"/><br>
+                <form method="POST">   
+					<div class="submitButtonBox">
+						<br/><br/>
+                        <p><strong>Please confirm the deletion of this destination</strong></p>
+						<input class="submitButton" type="submit" value="Yes, Delete">
+					</div>
+				</div>
+			</form>
+            <a href="/admin/destinations/list">Cancel - Go Back to List</a>
+		</div>
+	</section>
+{% endblock content %}

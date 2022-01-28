@@ -1,0 +1,103 @@
+{% extends "base.html.twig" %}
+{% block title %}Destinations
+{% endblock %}
+{% block head %}
+	<link rel="stylesheet" href="styles/destinations.css">
+	<script src="scripts/nav.js"></script>
+	{{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+
+	<div class="parallax-1">
+		<div class="caption">
+			<span class="border">Destinations..</span>
+		</div>
+	</div>
+
+	<section class="section p-5">
+
+		<div class="container">
+			<div class="row text-center g-4">
+
+				{% if destinations %}
+					{% for destination in destinations %}
+						<!-- Destination Card -->
+						<div class="col-6-md" id="{{destination.id}}">
+							<div class="card .bg-light.bg-gradient text-dark shadow-sm rounded-pill">
+								<div class="card-body text-center">
+									<div class="h1 mb-3">
+										<h2 class="h3 card-title">{{ destination.destination_name }}</h2>
+									</div>
+									
+										<button class="imgButton rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal{{ destination.id }}"><img class="img-fluid destinationImage rounded-pill" src="{{ destination.destination_imagepath }}" alt="{{ destination.destination_name }} photo" title="{{ destination.destination_name }} title photo"></button>
+									
+								</div>
+							</div>
+						</div>
+						<!-- Modal -->
+						<div class="modal fade" id="exampleModal{{ destination.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h2 class="h3 card-title text-nowrap" id="exampleModalLabel">{{ destination.destination_name }}</h2>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										<p>
+											{% autoescape %}{{ destination.destination_description|raw }}{% endautoescape %}
+										</p>
+									</div>
+									<!-- photo carousel -->
+									<div id="destinationCarouselControls{{ destination.id }}" class="carousel slide" data-bs-ride="carousel{{ destination.id }}">
+										<div class="carousel-inner">
+											<div class="carousel-item active">
+												<img src="{{ destination.destination_imagepath }}" class="d-block w-100" alt="{{ destination.destination_name }}" style="object-fit: cover;object-position: center;height: 50vh;overflow: hidden;">
+											</div>
+											{% if images %}
+												{% for image in images %} <!--photo arrays of variable size can be added.-->
+													{% if destination.id is same as(image.destination_id) %}
+														<div class="carousel-item">
+															<img src="{{ image.collage_imagepath }}" class="d-block w-100" alt="{{ destination.destination_imagepath }}" style="object-fit: cover;object-position: center;height: 50vh;overflow: hidden;">
+															<!-- Custom styling needed to make images appear in a uniformly -->
+														</div>
+													{% endif %}
+												{% endfor %}
+											{% endif %}
+										</div>
+										<button class="carousel-control-prev" type="button" data-bs-target="#destinationCarouselControls{{ destination.id }}" data-bs-slide="prev">
+											<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+											<span class="visually-hidden">Previous</span>
+										</button>
+										<button class="carousel-control-next" type="button" data-bs-target="#destinationCarouselControls{{ destination.id }}" data-bs-slide="next">
+											<span class="carousel-control-next-icon" aria-hidden="true"></span>
+											<span class="visually-hidden">Next</span>
+										</button>
+									</div>
+									<!-- photo carousel END -->
+									<div class="modal-footer">
+										<button type="button" class="btn">
+											<a class="logInButton p-2" href="https://travel.fsd01.ca/testbooking">Book!</a>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Modal END-->
+						<!-- Destination Card END-->
+					{% endfor %}
+				{% endif %}
+
+			</div>
+		</div>
+
+	</section>
+
+	<div class="parallax-1">
+		<div class="caption">
+			<span class="border">...Escape</span>
+		</div>
+	</div>
+
+{% endblock %}

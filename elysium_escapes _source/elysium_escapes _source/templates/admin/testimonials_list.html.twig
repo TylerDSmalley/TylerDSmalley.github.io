@@ -1,0 +1,63 @@
+{% extends "admin/master.html.twig" %}
+
+{% block title %}User List
+{% endblock %}
+
+{% block head %}
+	<style>
+		.table,
+		th,
+		td {
+			border: 1px solid black;
+			padding: 15px;
+			text-align: center;
+		}
+		.center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		caption {
+			caption-side: top;
+			text-align: left;
+		}
+	</style>
+{% endblock %}
+
+{% block content %}
+	<br/><br/><br/>
+	<table class="center">
+		<caption>Testimonials</caption>
+		<tr>
+			<th>ID</th>
+			<th>Destination ID</th>
+			<th>User ID</th>
+			<th>Comment Title</th>
+			<th>Comment Body</th>
+			<th>Image</th>
+            <th>Destination Rating</th>
+            <th>Created</th>
+			<th>Actions</th>
+		</tr>
+		{% for t in testimonialsList %}
+			<tr>
+				<td>{{t.id}}</td>
+				<td>{{t.destination_id}}</td>
+				<td>{{t.user_id}}</td>
+				<td>{% autoescape %}{{t.comment_title|raw}}{% endautoescape %}</td>
+				<td>{% autoescape %}{{t.comment_body|raw}}{% endautoescape %}</td>
+				{% if t.image_filepath is null %}
+				<td>No Photo</td>
+				{% else %}
+				 <td><img src ="/../{{t.image_filepath}}" width="250"/></td>
+				{% endif %}
+                <td>{{t.destination_rating}}</td>
+                <td>{{t.createdTS}}</td>
+				<td>
+					<a href="/admin/testimonials/delete/{{t.id}}">Delete</a>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+		
+{% endblock %}

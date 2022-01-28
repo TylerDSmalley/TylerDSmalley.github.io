@@ -1,0 +1,99 @@
+/* CSS Document for the Contact page */
+
+
+/* Developed by: Tyler Smalley */
+
+.registration {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.section {
+    background-image: url("../images/sand2.jpg");
+}
+
+.parallax-1 {
+    position: relative;
+    opacity: 0.9;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-1 {
+    background-image: linear-gradient(to right, #eee7e1, #ebe1dc);
+    min-height: 30%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: #000;
+}
+
+.border {
+    opacity: .7;
+    background-color: #111;
+    border-radius: 5px;
+    color: #fff;
+    width: 100%;
+    height: auto;
+    padding: 18px;
+    font-size: 16pt;
+    font-family: 'Caveat', cursive;
+    letter-spacing: 10px;
+}
+
+.submitButtonBox {
+    flex: auto;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.submitButton {
+    width: 140px;
+    height: 45px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 15px;
+    background-color: #f1dbc7;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    color: #000;
+    font-size: 11px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background-color: #3ddf9e;
+    box-shadow: 0px 15px 20px rgba(47, 211, 145, 0.4);
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+
+/* Turn off parallax scrolling for tablets and phones */
+
+@media only screen and (max-width: 1024px) {
+    .parallax-1 {
+        background-attachment: scroll;
+    }
+}
+
+#confirmMessage {
+    font-weight: bold;
+}

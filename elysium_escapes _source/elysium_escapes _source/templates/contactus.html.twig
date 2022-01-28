@@ -1,0 +1,122 @@
+{% extends "base.html.twig" %}
+{% block title %}Contact Us
+{% endblock %}
+{% block head %}
+	<link rel="stylesheet" href="styles/contact.css">
+	<link rel="stylesheet" href="https://fonts.google.com/specimen/Source+Sans+Pro?category=Sans+Serif">
+	<link rel="stylesheet" href="https://fonts.google.com/specimen/Roboto?category=Sans+Serif#standard-styles">
+	<script src="scripts/nav.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	{{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+	<div class="parallax-1">
+		<div class="caption">
+			<span class="border">Contact Us</span>
+		</div>
+	</div>
+
+	<section class="section p-5">
+
+		<div class="container p-3 mt-5 mb-5 bg-light rounded shadow-sm">
+
+			<div class="row text-center g-4">
+
+				<div class="div col-md">
+					<h3 class="text-start  mt-4">Address</h3>
+					<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d831.4288313210799!2d-73.57475810682598!3d45.49835963789182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a421f732e1f%3A0x99c5ec658d273acc!2s1234%20Rue%20Sainte-Catherine%20O%2C%20Montr%C3%A9al%2C%20QC%20H3G%201P1!5e0!3m2!1sen!2sca!4v1632144001448!5m2!1sen!2sca" width="90%" height="350px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				</div>
+
+				<div class="div col-md">
+					<h3 class="text-start mt-4">Hours Of Operation</h3>
+					<table class="table text-start">
+						<tbody>
+							<tr>
+								<th>Monday - Friday</th>
+								<td>9:00am - 6:00pm</td>
+							</tr>
+							<tr>
+								<th>Saturday</th>
+								<td>9:00am - 1:00pm</td>
+							</tr>
+							<tr>
+								<th>Sunday</th>
+								<td>CLOSED</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<h3 class="text-start  mt-4">Telephone</h3>
+					<table class="table text-start">
+						<tr>
+							<th>Local</th>
+							<td>514-444-5555</td>
+						</tr>
+						<tr>
+							<th>International</th>
+							<td>514-555-4444</td>
+						</tr>
+						<tr>
+							<th>Email</th>
+							<td>abc@example.com</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+
+			<div class="div col-md">
+				<h3 class="text-start  mt-4">Contact Us</h3>
+				<form method="post" enctype="multipart/form-data">
+					<div class="col-md">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" name="first_name" placeholder="Jane" value="{{ v.first_name }}">
+							<label for="floatingInput">First Name:</label>
+							<div class="redText">{{errors.first_name}}</div>
+						</div>
+					</div>
+
+					<div class="col-md">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" name="last_name" placeholder="Doe" value="{{ v.last_name }}">
+							<label for="floatingInput">Last Name:</label>
+							<div class="redText">{{errors.last_name}}</div>
+						</div>
+					</div>
+
+					<div class="col-md">
+						<div class="form-floating mb-3">
+							<input type="email" class="form-control" id="floatingInputEmail" name="email" placeholder="name@example.com" value="{{ v.email }}">
+							<label for="floatingInputEmail">Email</label>
+							<div class="redText" id="confirmMessage">{{errors.email}}</div>
+						</div>
+					</div>
+
+					<div class="col-md">
+						<div class="form-floating mb-3">
+							<textarea class="form-control" id="floatingInputGrid" name="message_body" placeholder="Write something.." style="height:200px" value="{{v.itemDescription}}"></textarea>
+							<label for="floatingInputGrid" class="col-form-label">Message:</label>
+							<div class="redText">{{errors.message_body}}</div>
+						</div>
+					</div>
+
+					<div class="submitButtonBox">
+						<input class="submitButton" type="submit" name="submit" value="Submit">
+					</div>
+				</form>
+			</div>
+
+		</div>
+
+	</section>
+
+	<div class="parallax-1">
+		<div class="caption">
+			<span class="border">...Escape</span>
+		</div>
+	</div>
+
+
+{% endblock %}

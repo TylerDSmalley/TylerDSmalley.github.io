@@ -1,0 +1,76 @@
+{% extends "admin/master.html.twig" %}
+
+{% block title %}Contact Us Form List
+{% endblock %}
+
+{% block head %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+        $(document).ready(function () {
+            $('input[type=checkbox]').click(function() {
+                var checkVal = $(this).prop('checked') ? 'Yes' : 'No';
+                var checkId = $(this).attr("name");
+             
+                var readObj = { replied: checkVal, id: checkId};
+                var jsonString = JSON.stringify(readObj);
+                $.ajax({
+                    url: '/isMessageRead/' + checkId + "/" + checkVal,
+                    type: 'PATCH',
+                    data: jsonString,
+                    dataType: 'json'
+                })
+			});
+        });
+    </script>
+	<style>
+		.table,
+		th,
+		td {
+			border: 1px solid black;
+			padding: 15px;
+			text-align: center;
+		}
+		.center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		caption {
+			caption-side: top;
+			text-align: left;
+		}
+	</style>
+{% endblock %}
+
+{% block content %}
+	<br/><br/><br/><br/><br/>
+	<table class="center">
+		<tr>
+			<th>ID</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+            <th>Message</th>
+            <th>Time Message Received</th>
+            <th>Actions</th>
+		</tr>
+		{% for c in contactsList %}
+			<tr>
+				<td>{{c.id}}</td>
+				<td>{{c.first_name}}</td>
+                <td>{{c.last_name}}</td>
+                <td>{{c.email}}</td>
+				<td>{% autoescape %}{{c.message_body|raw}}{% endautoescape %}</td>
+				<td>{{c.contactTS}}</td>
+				<td>
+                    {% if c.replied == 'Yes'%}
+                    <input type="checkbox" id="{{c.id}}" name="{{c.id}}" value="contacted" checked>
+                    {% else %}
+                    <input type="checkbox" id="{{c.id}}" name="{{c.id}}" value="contacted">
+                    {% endif %}
+                    <label for="contacted">Read and Replied to Message</label><br>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

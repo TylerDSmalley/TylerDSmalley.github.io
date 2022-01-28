@@ -1,0 +1,64 @@
+{% extends "admin/master.html.twig" %}
+
+{% block title %}Bookings List
+{% endblock %}
+
+{% block head %}
+	<style>
+		.table,
+		th,
+		td {
+			border: 1px solid black;
+			padding: 15px;
+			text-align: center;
+		}
+		.center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		caption {
+			caption-side: top;
+			text-align: left;
+		}
+	</style>
+{% endblock %}
+
+{% block content %}
+	<br/><br/><br/><br/><br/>
+	<table class="center">
+		<caption>Booking History</caption>
+		<tr>
+			<th>ID</th>
+            <th>User ID</th>
+			<th>Destination ID</th>
+			<th>Hotel ID</th>
+			<th>Flight ID</th>
+            <th>Number of Adults</th>
+			<th>Number of Children</th>
+			<th>Paid On</th>
+            <th>Total Price</th>
+            <th>Departure Date</th>
+            <th>Return Date</th>
+			<th>Payment Status</th>
+            <th>Booking Confirmation ID</th>
+		</tr>
+		{% for b in bookingsList %}
+			<tr>
+				<td>{{b.id}}</td>
+				<td>{{b.user_id}}</td>
+				<td>{{b.destination_id}}</td>
+                <td>{{b.hotel_id}}</td>
+                <td>{{b.flight_id}}</td>
+				<td>{{b.number_adults}}</td>
+				<td>{{b.number_children}}</td>
+				<td>{{b.paymentTS}}</td>
+                <td>{{b.total_price}}</td>
+                <td>{{b.departure_date}}</td>
+                <td>{{b.return_date}}</td>
+				<td>{{b.payment_status}}</td>
+                <td>{{b.booking_confirm}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

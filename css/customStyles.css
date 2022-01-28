@@ -1,0 +1,122 @@
+/*Author: Tyler Smalley*/
+
+.text-indention {
+    text-indent: 50px;
+}
+
+.text-blah {
+    text-align: justify;
+}
+
+.imgButton {
+    border-radius: 50%;
+    flex: auto;
+    align-content: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 300px;
+    font-size: 16pt;
+    letter-spacing: 2px;
+    margin: 5px 3px;
+    padding: 5px;
+    background-color: #f1dbc7;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    color: #000;
+    font-size: 11px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.imgButton:hover {
+    background-color: #3ddf9e;
+    box-shadow: 0px 15px 20px rgba(47, 211, 145, 0.4);
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.skillButton {
+    border-radius: 50%;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.skillButton:hover {
+    background-color: #1BBC9B;
+    box-shadow: 0px 15px 20px rgba(47, 211, 145, 0.4);
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.logInButtonBox {
+    flex: auto;
+    align-self: right;
+    min-width: fit-content;
+    height: auto;
+    margin: auto;
+}
+
+.logInButton {
+    flex: auto;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 16pt;
+    letter-spacing: 2px;
+    margin: 5px 3px;
+    padding: 1rem;
+    width: 200px;
+    background-color: #f1dbc7;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    color: #000;
+    font-size: 11px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.logInButton:hover {
+    background-color: #3ddf9e;
+    box-shadow: 0px 15px 20px rgba(47, 211, 145, 0.4);
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.marquee {
+    padding-top: calc(6rem + 74px);
+    padding-bottom: 6rem;
+}
+
+.marquee .marquee-heading {
+    font-size: 24pt;
+    line-height: 2.75rem;
+}
+
+.marquee .marquee-subheading {
+    font-size: 1.25rem;
+}
+
+@media (min-width: 992px) {
+    .marquee {
+        padding-top: calc(6rem + 104px);
+        padding-bottom: 6rem;
+    }
+    .marquee .marquee-heading {
+        font-size: 50pt;
+        line-height: 2rem;
+    }
+    .marquee .marquee-subheading {
+        font-size: 16pt;
+    }
+}
+
+.footer {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+.copyright {
+    background-color: #1f2c3a;
+}

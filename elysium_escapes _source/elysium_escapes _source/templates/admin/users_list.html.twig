@@ -1,0 +1,59 @@
+{% extends "admin/master.html.twig" %}
+
+{% block title %}User List
+{% endblock %}
+
+{% block head %}
+	<style>
+		.table,
+		th,
+		td {
+			border: 1px solid black;
+			padding: 15px;
+			text-align: center;
+		}
+		.center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		caption {
+			caption-side: top;
+			text-align: left;
+		}
+	</style>
+{% endblock %}
+
+{% block content %}
+	<br/><br/><br/>
+
+	<table class="center">
+		<caption><a href="/admin/users/add">Create a New User</a>&nbsp; | &nbsp;<a href="/admin/users/inactive">View Inactive Users</a></caption>
+		<tr>
+			<th>ID</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+			<th>Phone Number</th>
+			<th>User Type</th>
+            <th>Account Status</th>
+			<th>Actions</th>
+		</tr>
+		{% for u in usersList %}
+			<tr>
+				<td>{{u.id}}</td>
+				<td>{{u.first_name}}</td>
+				<td>{{u.last_name}}</td>
+				<td>{{u.email}}</td>
+				<td>{{u.phone_number}}</td>
+				<td>{{u.account_type}}</td>
+                <td>{{u.status}}</td>
+				<td>
+					<a href="/admin/users/edit/{{u.id}}">Edit</a>&nbsp;
+					<a href="/admin/users/delete/{{u.id}}">Delete</a>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+		
+{% endblock %}

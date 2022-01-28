@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Elysian Escapes is a premier travel agency with catering to the travel needs of the elite"/>
+		<meta
+		name="keywords" content="Elysian Escapes, travel, booking, vacation, travel agency, beach, tropical, paradise"/>
+
+		<!--HTML Document for the travel site page Developed by: Tyler Smalley-->
+		<link rel="icon" type="image/png" href="../images/favicon.png">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+		<link rel="stylesheet" href="../styles/bootstrap.css">
+		<link rel="stylesheet" href="../styles/navigation.css">
+		<script src="../scripts/nav.js"></script>
+
+		{% block head %}
+			<title>
+				{% block title %}{% endblock %}
+				| Elysian Escapes</title>
+		{% endblock %}
+	</head>
+
+	<body class="body">
+		<header class="header">
+			<img src="../images/hamburger.png" id="mobile-nav-button" alt="nav menu icon" onclick="openNav()"/>
+			<nav class="nav navbar navbar-expand-md py-3">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<ul class="navigation">
+					<li class="logoBox">
+						<a href="https://travel.fsd01.ca"><img src="../images/Logo.png" id="logo" alt="Elysium Escapes Logo"/></a>
+					</li>
+					<li class="logInButtonBox">
+						<a class="btn logInButton" href="https://travel.fsd01.ca/blog">Tales from Elysium</a>
+					</li>
+					<li class="logInButtonBox">
+						<a class="btn logInButton" href="https://travel.fsd01.ca/destinations">Destinations</a>
+					</li>
+					<li class="logInButtonBox">
+						<a class="btn logInButton" href="https://travel.fsd01.ca/trcalendar">Calendar</a>
+					</li>
+					<li class="logInButtonBox">
+						<a class="btn logInButton" href="https://travel.fsd01.ca/testbooking">Book Now</a>
+					</li>
+					<li class="logInButtonBox">
+						<a class="btn logInButton" href="https://travel.fsd01.ca/contactus">Contact Us</a>
+					</li>
+					<li class="logInButtonBox">
+						<a class="btn logInButton" href="#">Fr</a>
+					</li>
+					{% if user.email != null %}
+						{% if (user.account_type == "manager") or (user.account_type == "admin") %}
+							<li class="logInButtonBox nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{user.email}}</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li>
+										<a class="dropdown-item" href="https://travel.fsd01.ca/users/trips">Order History</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="https://travel.fsd01.ca/users/edit">Edit Profile</a>
+									</li>
+									<hr class="solid">
+									<li>
+										<h5 class="dropdown-item">Admin Menu</h5>
+									</li>
+									<li>
+										<a class="dropdown-item" href="https://travel.fsd01.ca/admin/users/list">User List</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="https://travel.fsd01.ca/admin/destinations/list">Destination List</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="https://travel.fsd01.ca/admin/contactus/list">Contact Us List</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="https://travel.fsd01.ca/admin/bookings/list">Booking history List</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="https://travel.fsd01.ca/admin/testimonials/list">Testimonials List</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="https://travel.fsd01.ca/admin/hotels/list">Hotels List</a>
+									</li>
+									<hr class="solid">
+									<li class="logInButtonBox">
+										<a class="dropdown-item" href="https://travel.fsd01.ca/logout">Sign Out</a>
+									</li>
+								</ul>
+							</li>
+						{% elseif (user.account_type == "customer") %}
+							<li class="logInButtonBox nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{user.email}}</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li>
+										<a class="dropdown-item" href="https://travel.fsd01.ca/users/trips">Trip History</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="https://travel.fsd01.ca/users/edit">Edit Profile</a>
+									</li>
+									<hr class="solid">
+									<li class="logInButtonBox">
+										<a class="dropdown-item" href="https://travel.fsd01.ca/logout">Sign Out</a>
+									</li>
+								</ul>
+							</li>
+						{% endif %}
+					{% else %}
+						<li class="logInButtonBox">
+							<a class="btn logInButtonBox" href="https://travel.fsd01.ca/login">
+								<button type="submit" class="btn logInButton">Sign in</button>
+							</a>
+						</li>
+					{% endif %}
+				</ul>
+			</nav>
+		</header>
+
+		{% if flashMessage %}
+				<div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+					<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+						<div class="toast-header">
+							<img src="../images/Logo.png" class="rounded me-5" alt="logo">
+							<button type="button" class="btn-close  ms-5" data-bs-dismiss="toast" aria-label="Close"></button>
+						</div>
+						<div class="toast-body">
+							<strong class="me-auto">{{ flashMessage }}</strong>
+						</div>
+					</div>
+				</div>
+			{% endif %}
+
+		{% block content %}
+			
+		{% endblock %}
+
+		<footer class="footer text-center">
+			<div class="container">
+				<p class="lead">Copyright &copy; 2021 Team SIT</p>
+
+				<a href="" class="postion-absolute bottom-0 end-0 p-5">
+					<i class="bi bi-arrow-up-circle h1"></i>
+				</a>
+			</div>
+		</footer>
+
+		{% block scripts %}{% endblock %}
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	</body>
+
+</html></body></html>

@@ -59,7 +59,7 @@
     <section class="page-section portfolio" id="portfolio">
         <div class="container">
             <!-- Portfolio Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio Projects</h2>
             <!-- Icon Divider-->
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
@@ -75,6 +75,23 @@
                         <img class="img-fluid imgButton" src="assets/img/portfolio/elysiumEscapes/home.jpg" alt="Elysium Escapes Project" title="Elysium Escapes Project" />
                     </div>
                 </div>
+
+                <!-- Portfolio Item 2-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <h3>ITems</h3>
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                        <img class="img-fluid imgButton" src="assets/img/portfolio/items/ITems_dashboard.png" alt="ITems Project" title="ITems Project" />
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <h3>readWell</h3>
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                        <img class="img-fluid imgButton" src="assets/img/portfolio/readWell/readWell_index.png" alt="readWell Project" title="readWell Project" />
+                    </div>
+                </div>
+
 
             </div>
         </div>
@@ -252,7 +269,7 @@
 
                                 <!-- Portfolio Modal - Text-->
                                 <div class="text-start mt-4">
-                                    <p class="mb-4 text-indention">Elysium Escapes is a mock travel site catering to high end clients. This was an integration project for my web developement class. As such, this project touches all aspects of a working web page from front to back.
+                                    <p class="mb-4 text-indention">Elysium Escapes is a mock travel site catering to high end clients. It was built by <a href="www.linkedin.com/in/ileana-luts-a22a27226">Ileana Luts</a>, Stephan Needham and I. This was an integration project for my web developement class. As such, this project touches all aspects of a working web page from front to back.
                                         The site is fully functional in a mock setting.</p>
                                     <p class="mb-4 text-indention">User's can browse destinations, read travel stories from other customers and review their past orders. All of these items are populated dynamically from the database. Visitors can contact the site owners through a form
                                         on the contact us page, which will store their message in the DB. A user can register and log into an account with the site. If they forget their email, a password recovery link is sent to their email address. Finally,
@@ -269,6 +286,144 @@
                                 <!-- <a class="btn logInButton" href="https://travel.fsd01.ca/">Visit Elysium Escapes</a> -->
                                 <a class="btn logInButton" href="elysium_escapes _source.zip">Source Code</a>
                                 <a class="btn logInButton" href="https://docs.google.com/presentation/d/1-arHvyLURJyImy0aWsBWcZB4PjQta9hqLBVIB1FuvtY/edit?usp=sharing">Presentation</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 2-->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">ITems</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+
+                                <div id="destinationCarouselControlsITems" class="carousel slide" data-bs-ride="carouselITems">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="assets/img/portfolio/items/ITems_openDash.png" class="d-block w-100" alt="Elysium Escapes" style="object-fit: cover;object-position: center;height: 50vh;overflow: hidden;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="assets/img/portfolio/items/ITems_HRrequests.png" class="d-block w-100" alt="{{ destination.destination_imagepath }}" style="object-fit: cover;object-position: center;height: 50vh;overflow: hidden;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="assets/img/portfolio/items/ITems_update.png" class="d-block w-100" alt="{{ destination.destination_imagepath }}" style="object-fit: cover;object-position: center;height: 50vh;overflow: hidden;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="assets/img/portfolio/items/ITems_richTextJobs.png" class="d-block w-100" alt="{{ destination.destination_imagepath }}" style="object-fit: cover;object-position: center;height: 50vh;overflow: hidden;">
+                                        </div>
+                                        
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#destinationCarouselControlsITems" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#destinationCarouselControlsITems" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+
+                                <!-- Portfolio Modal - Text-->
+                                <div class="text-start mt-4">
+                                    <p class="mb-4 text-indention">ITems is a mock Employee management system built by <a href="www.linkedin.com/in/ileana-luts-a22a27226">Ileana Luts</a> and I using Java Spring Boot, Java Spring Security, thymeleaf templating engine, Bootstrap 5 and MySql Locally/ PostgreSQL hosted on Heroku. We were given about a week to build an initial proof of concept for our Java/Programming III class. To see where this project would be headed given a larger timeframe, please refer to the project presentation below. 
+                                    </p>
+                                    <p class="mb-4 text-indention">
+                                        Being an EMS, anyone attempting to visit the app will be automatically redirected by Spring Boot Security to the login portal. Only current HR employees with the role-MANAGER can add new employees to the system. Upon onboarding, the new employee is sent an email with their initial log in credentials, inviting them to log in and update their profile. The link provided in the email will push them straight to the update page to ensure their first step will be to submit their personal info to HR.
+                                    </p>
+                                    <p class="mb-4 text-indention"> Upon successful sign in, the employee is taken to the dashboard where they can view three cards: Employee Profile, HR requests, and Employee documents. After being clicked, these three cards expand to show more detailed information as well as buttons to change/submit new info to HR. For example, an HR request can be submitted from the dashboard requesting time off or location transfer. Once the transfer is submitted, the HR manager can view the request from the Admin dashboard and choose to approve or deny. The status of the request is displayed for the Employee to see in the HR request card dropdown</p>
+                                </div>
+                                <!-- <a class="btn logInButton" href="https://travel.fsd01.ca/">Visit Elysium Escapes</a> -->
+                                <a class="btn logInButton" href="items.zip">Source Code</a>
+                                <a class="btn logInButton" href="https://docs.google.com/presentation/d/19QZIu-0ISESbxyoZlfaVEJJOfgwC2E5eokOrx6IV85o/edit?usp=sharing">Presentation</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 3-->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">ReadWell</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+
+                                <div id="destinationCarouselControlsReadWell" class="carousel slide" data-bs-ride="carouselReadWell">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="assets/img/portfolio/readWell/readWell_index.png" class="d-block w-100" alt="Elysium Escapes" style="object-fit: cover;object-position: center;height: 50vh;overflow: hidden;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="assets/img/portfolio/readWell/readWell_bookDetails.png" class="d-block w-100" alt="{{ destination.destination_imagepath }}" style="object-fit: cover;object-position: center;height: 50vh;overflow: hidden;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="assets/img/portfolio/readWell/readWell_loginGoogle.png" class="d-block w-100" alt="{{ destination.destination_imagepath }}" style="object-fit: cover;object-position: center;height: 50vh;overflow: hidden;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="assets/img/portfolio/readWell/readWell_bookshelf.png" class="d-block w-100" alt="{{ destination.destination_imagepath }}" style="object-fit: cover;object-position: center;height: 50vh;overflow: hidden;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="assets/img/portfolio/readWell/readWell_ReviewRate.png" class="d-block w-100" alt="{{ destination.destination_imagepath }}" style="object-fit: cover;object-position: center;height: 50vh;overflow: hidden;">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#destinationCarouselControlsReadWell" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#destinationCarouselControlsReadWell" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+
+                                <!-- Portfolio Modal - Text-->
+                                <div class="text-start mt-4">
+                                    <p class="mb-4 text-indention">
+                                        ReadWell is a mock A Social Cataloging website akin to GoodReads. It was built by <a href="www.linkedin.com/in/ileana-luts-a22a27226">Ileana Luts</a> and I using React.js, Material-UI, Bootstrap 5,
+                                        Express, Node.js, and Sequelize. The server/api is hosted on Heroku, the React app is hosted on Netlify, the MySql database hosted on AWS RDS, and the images are hosted on an AWS S3 bucket. We were given about a week to build an initial proof of concept for our React.JS/Web Programming II class. To see where this project would be headed given a larger timeframe, please refer to the project presentation below.
+                                    </p>
+                                    <p class="mb-4 text-indention">
+
+                                    </p>
+                                    <p class="mb-4 text-indention"> 
+
+                                    </p>
+                                </div>
+                                <!-- <a class="btn logInButton" href="https://travel.fsd01.ca/">Visit Elysium Escapes</a> -->
+                                <a class="btn logInButton" href="ReactProject_readWell_TeamIT.zip">Source Code</a>
+                                <a class="btn logInButton" href="https://docs.google.com/presentation/d/1nZE9MiXs4HEeoVWm4oqsg3j66-VD8SUHB_Astcn_l7A/edit?usp=sharing">Presentation</a>
 
                             </div>
                         </div>

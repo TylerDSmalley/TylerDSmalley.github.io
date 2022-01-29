@@ -120,3 +120,8 @@
 .copyright {
     background-color: #1f2c3a;
 }
+
+.justifyText {
+    text-align: justify; 
+    text-justify: inter-word;
+}

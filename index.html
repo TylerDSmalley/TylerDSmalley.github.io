@@ -441,7 +441,8 @@
                                         return a selction of high end resorts that match their criteria. The results are
                                         displayed in a series of modals and within each modal the user can browse photos
                                         that the api sent for the given hotel. When the user
-                                        was ready, they may book a trip. To handle payment processing, the Stripe api was
+                                        was ready, they may book a trip. To handle payment processing, the Stripe api
+                                        was
                                         used. As this was a mock site, no actual transactions are permitted, so we use
                                         Stripe's provided test card numbers. Upon completion,
                                         the user was taken to an order summary page. At the same time, a confirmation
@@ -735,7 +736,8 @@
 
                                 <!-- Portfolio Modal - Text-->
                                 <div class="text-start mt-4">
-                                    <p class="mb-4 text-indention">The Lending Circle was a mock exchange site supporting
+                                    <p class="mb-4 text-indention">The Lending Circle was a mock exchange site
+                                        supporting
                                         a circular economy. It was built by <a
                                             href="https://www.linkedin.com/in/ileana-luts-a22a27226/">Ileana Luts</a>,
                                         <a href="https://www.linkedin.com/in/phil-jonathan-arceno-ab472b136/">Phil-Jonathan
@@ -879,7 +881,8 @@
 
                                     </p>
                                     <p class="mb-4 text-indention">
-                                        Game Garage was an arcade style site where users can play free, JavaScript based,
+                                        Game Garage was an arcade style site where users can play free, JavaScript
+                                        based,
                                         video games.
                                         At the moment, they can choose to play the classic game - Brick Breaker. A score
                                         table, living
@@ -1037,10 +1040,38 @@
         </div>
     </div>
 
+    <!-- Page Load Modal -->
+    <div class="modal" tabindex="-1" role="dialog" id="newPageModal" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Important Notice</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Hey there! While it's fun to live in nostalgia for a time, you should really check out my new
+                            and improved portfolio written in React. Enjoy!</p>
+                        <a href="https://tylerdsmalley.com" target="_blank">
+                            <img src="./assets/img/tsLogo.webp" alt="Tyler Smalley Logo"
+                                class="mx-auto d-block rounded-circle img-fluid">
+                        </a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    <script src="./js/modalTrigger.js"></script>
 </body>
 
 </html>
